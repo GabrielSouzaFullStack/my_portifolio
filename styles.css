@@ -422,3 +422,9 @@ footer .line-footer a{
         text-align: center;
     }
 }
+
+@media (max-height: 900px) {
+    .especialidades .btn-social a > svg {
+        color: #fff;
+    }
+}
