@@ -51,7 +51,7 @@ h2.titulo span {
   color: #073fcc;
 }
 
-button:hover,
+button:not(.accordion-button):hover,
 form .btn-enviar input[type="submit"]:hover {
   box-shadow: 0px 0px 4px #073fcc;
   transform: scale(1.05);
@@ -69,7 +69,7 @@ header {
   background-color: white;
 }
 
-header > .interface {
+header .bloco-logo {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -225,9 +225,7 @@ section.especialidades .flex {
 
 /* ESTILO CONHECIMENTOS */
 .conhecimentos {
-  .container {
-    padding-top: 15px;
-  }
+  padding: 40px 4%;
 
   a {
     font-weight: bold;
@@ -240,6 +238,87 @@ section.especialidades .flex {
     float: right;
     font-weight: bold;
   }
+}
+
+/* ESTILO DÚVIDAS */
+section.duvidas {
+  padding: 40px 4%;
+}
+
+/* Estilização do Accordion */
+.duvidas .accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.duvidas .accordion-item {
+  background-color: transparent;
+  border: 2px solid rgba(7, 63, 204, 0.2);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.duvidas .accordion-item:hover {
+  border-color: #073fcc;
+  transform: translateY(-2px);
+  transform: none !important;
+  box-shadow: 0 5px 15px rgba(7, 63, 204, 0.2);
+}
+
+.duvidas .accordion-button {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px 25px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.duvidas .accordion-button:not(.collapsed) {
+  background-color: #073fcc;
+  color: #fff;
+  box-shadow: none;
+}
+
+.duvidas .accordion-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.duvidas .accordion-button::after {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_19187_18)'%3E%3Cpath d='M16.5586 28.0781C23.186 28.0781 28.5586 22.7055 28.5586 16.0781C28.5586 9.45071 23.186 4.07812 16.5586 4.07812C9.93118 4.07812 4.55859 9.45071 4.55859 16.0781C4.55859 22.7055 9.93118 28.0781 16.5586 28.0781Z' stroke='%23232323' stroke-width='2' stroke-miterlimit='10'/%3E%3Cpath d='M11.5586 16.0781H21.5586' stroke='%23232323' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5586 11.0781V21.0781' stroke='%23232323' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_19187_18'%3E%3Crect width='35' height='35' fill='white' transform='translate(0.558594 0.078125)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  filter: brightness(0) invert(1);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+}
+
+.duvidas .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+.duvidas .accordion-body {
+  background-color: rgba(7, 63, 204, 0.05);
+  color: #fff;
+  padding: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.duvidas .accordion-body strong {
+  color: #073fcc;
+}
+
+.duvidas .accordion-body code {
+  background-color: rgba(7, 63, 204, 0.2);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 /* ESTILO DO SOBRE */
